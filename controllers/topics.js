@@ -5,4 +5,8 @@ router.get('/', (req, res) => {
     res.render('topics/index.ejs');
 });
 
+router.get('/new', (req, res) => {
+    res.render('topics/new.ejs');
+});
+
 module.exports = router;
