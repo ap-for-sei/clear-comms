@@ -9,6 +9,13 @@
 <body>
     <header>
         <h1>topics</h1>
+        <ul>
+            <% for (i = 0; i < topics.length; i++) { %>
+                <li>
+                    <a href="/topics/<%= topics[i]._id %>"><%= topics[i].name %></a>
+                </li>
+            <% } %>
+        </ul>
     </header>
 </body>
 </html>

@@ -3,6 +3,10 @@ const app = express();
 
 const port = 3000;
 
+require('./db/db.js');
+
+app.use(express.urlencoded({ extended: false }));
+
 const topicsController = require('./controllers/topics.js');
 app.use('/topics', topicsController);
 
