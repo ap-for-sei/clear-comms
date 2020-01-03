@@ -20,5 +20,15 @@
             </ul>
         </nav>  
     </header>
+    <main>
+        <h2>list of posts</h2>
+        <ul>
+            <% for(let i = 0; i < posts.length; i++) { %>
+                <li>
+                    <a href="/posts/<%= posts[i]._id %>"><%= posts[i].postName %></a>
+                </li>
+            <% } %>
+        </ul>
+    </main>
 </body>
 </html>
