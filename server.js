@@ -13,6 +13,9 @@ app.use(express.urlencoded({ extended: false }));
 const topicsController = require('./controllers/topics.js');
 app.use('/topics', topicsController);
 
+const postsController = require('./controllers/posts.js');
+app.use('/posts', postsController);
+
 app.get('/', (req, res) => {
     res.render('index.ejs');
 });
