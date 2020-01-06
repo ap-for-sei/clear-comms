@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-
 const Topic = require('../models/topic.js');
+const Post = require('../models/post.js');
 
 router.get('/', (req, res) => {
     Topic.find({}, (err, foundTopics) => {
@@ -30,9 +30,11 @@ router.post('/', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    Topic.findByIdAndRemove(req.params.id, () => {
-        res.redirect('/topics');
-    });
+	Topic.findByIdAndRemove(req.params.id, () => {
+		Post.deleteMany({ topic_id: req.params.id}, () => {
+			res.redirect('/topics');
+		});
+	});
 });
 
 router.get('/:id/edit', (req, res) => {
