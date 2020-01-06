@@ -31,7 +31,7 @@ router.post('/', (req, res) => {
 
 router.delete('/:id', (req, res) => {
 	Topic.findByIdAndRemove(req.params.id, () => {
-		Post.deleteMany({ topic_id: req.params.id}, () => {
+		Post.deleteMany({ topic: req.params.id}, () => {
 			res.redirect('/topics');
 		});
 	});

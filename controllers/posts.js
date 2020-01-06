@@ -25,13 +25,10 @@ router.post('/', (req, res) => {
 	});
 });
 
-router.get('/:id', (req, res) => {
-	Post.findById(req.params.id, (err, foundPost) => {
-		Topic.find({ _id: foundPost.topic_id }, (err, foundTopic) => {
-			res.render('posts/show.ejs', {
-				post: foundPost,
-				topic: foundTopic
-			});
+router.get('/:id', async (req, res) => {
+	Post.findById(req.params.id).populate('topic').exec((err, foundPost) => {
+		res.render('posts/show.ejs', {
+			post: foundPost
 		});
 	});
 });

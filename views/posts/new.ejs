@@ -22,7 +22,7 @@
     </header>
     <main>
         <form action="/posts" method="POST">
-            <select name="topic_id">
+            <select name="topic">
                 <% for(let i = 0; i < topics.length; i++) { %>
                     <option value="<%= topics[i]._id %>"><%= topics[i].name %></option>
                 <% } %>
