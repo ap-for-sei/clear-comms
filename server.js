@@ -21,8 +21,11 @@ app.use('/topics', topicsController);
 const postsController = require('./controllers/posts.js');
 app.use('/posts', postsController);
 
-const usersController = require('./controllers/users');
+const usersController = require('./controllers/users.js');
 app.use('/auth', usersController);
+
+const seedController = require('./controllers/seed.js');
+app.use('/seed', seedController);
 
 // main route
 app.get('/', (req, res) => {
