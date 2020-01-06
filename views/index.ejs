@@ -8,22 +8,30 @@
 </head>
 <body>
     <header>
-        <h4>Login</h4>
-        <form action="/auth/login" method="POST">
-            <input type="text" name="username" placeholder="username"><br>
-            <input type="password" name="password" placeholder="password"><br>
-            <button type="submit">Login</button>
-        </form>
-
-        <h4>Registration</h4>
-        <form action="/auth/registration" method="POST">
-            <input type="text" name="username" placeholder="username"><br>
-            <input type="email" name="email" placeholder="email"><br>
-            <input type="password" name="password" placeholder="password"><br>
-            <button type="submit">Register</button>
-        </form>
+        <%= message %>
+        <% if (!logged) { %>
+            <h4>login</h4>
+            <form action="/auth/login" method="POST">
+                <input type="text" name="username" placeholder="username"><br>
+                <input type="password" name="password" placeholder="password"><br>
+                <button type="submit">login</button>
+            </form>
+        
+            <h4>registration</h4>
+            <form action="/auth/registration" method="POST">
+                <input type="text" name="username" placeholder="username"><br>
+                <input type="email" name="email" placeholder="email"><br>
+                <input type="password" name="password" placeholder="password"><br>
+                <button type="submit">register</button>
+            </form>
+        <% } %>
         <h1>welcome to clear-comms</h1>
         <nav>
+            <% if (logged) { %>
+                <li>
+                    <a href="/auth/logout">Logout</a>
+                </li>
+            <% } %>
             <ul>
                 <li>
                     <a href="/topics">topics index</a>

@@ -9,8 +9,14 @@ router.post('/login', async (req, res) => {
         const foundUser = await User.findOne({ username: req.body.username });
         if (foundUser) {
             if (bcrypt.compareSync(req.body.password, foundUser.password)) {
+                req.session.message = '';
+				req.session.username = foundUser.username;
+                req.session.logged = true;
+                
                 res.redirect('/topics');
             } else {
+                req.session.message = 'username or password is incorrect';
+
                 res.redirect('/');
             }
         } else {
@@ -33,10 +39,25 @@ router.post('/registration', async (req, res) => {
 
     try {
         const createdUser = await User.create(userDbEntry);
+
+        req.session.username = createdUser.username;
+        req.session.logged = true;
+        
         res.redirect('/topics');
     } catch(err) {
         res.send(err);
     }
+});
+
+// logout route
+router.get('/logout', (req, res) => {
+	req.session.destroy((err) => {
+		if(err){
+			res.send(err);
+		} else {
+			res.redirect('/');
+		}
+	});
 });
 
 module.exports = router;
