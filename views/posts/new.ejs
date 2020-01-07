@@ -4,35 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>New Post</title>
+    <title>NEW POST</title>
+    <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+            font-family: 'Kanit', sans-serif;
+            text-align: center;
+            background-color: grey;
+        }
+        h1 {
+            color: white;
+            padding: 10px 10px;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        li {
+          float: left;
+        }
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        button {
+            width: 20%;
+            background-color: black;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        input {
+            width: 20%;
+        }
+        .logout {
+            float: right;
+        }
+        textarea {
+            width: 20%;
+            height: 300px;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <ul>
                 <li>
-                    <a href="/">Home</a>
+                    <a href="/">HOME</a>
                 </li>
                 <li>
-                    <a href="/posts">All Posts</a>
+                    <a href="/posts">ALL POSTS</a>
                 </li>
                 <li>
-                    <a href="/topics">All Games</a>
+                    <a href="/topics">ALL GAMES</a>
                 </li>
             </ul>
         </nav>
     </header>
     <main>
-        <h1>Create a Post</h1>
+        <h1>CREATE A POST</h1>
         <form action="/posts" method="POST">
             <select name="topic">
                 <% for(let i = 0; i < topics.length; i++) { %>
                     <option value="<%= topics[i]._id %>"><%= topics[i].name %></option>
                 <% } %>
             </select><br>
-            <input type="text" name="postName" /><br/>
-            <textarea name="body"></textarea><br/>
-            <input type="submit" value="Submit Post"/>
+            <input type="text" name="postName" placeholder="TITLE" /><br/>
+            <textarea name="body" placeholder="YOUR MESSAGE"></textarea><br/>
+            <input type="submit" value="SUBMIT POST"/>
         </form>
     </main>
 </body>

@@ -55,17 +55,20 @@
         input {
             width: 20%;
         }
+        .logout {
+            float: right;
+        }
     </style>
 </head>
 <body>
     <header>
         <nav>
+            <ul>
             <% if (logged) { %>
-                <li>
+                <li class="logout">
                     <a href="/auth/logout">LOGOUT</a>
                 </li>
             <% } %>
-            <ul>
                 <li>
                     <a href="/topics">BROWSE GAMES</a>
                 </li>

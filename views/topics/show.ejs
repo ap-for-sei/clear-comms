@@ -4,45 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title><%= topic.name%></title>
+    <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+            font-family: 'Kanit', sans-serif;
+            text-align: center;
+            background-color: grey;
+        }
+        h1 {
+            color: white;
+            padding: 10px 10px;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        li {
+          float: left;
+        }
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        /* Change the link color to #111 (black) on hover */
+        li a:hover {
+          background-color: #111;
+        }
+        .main {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        .card {
+            width: 60%;
+            height: 30%;
+            box-shadow: 2px 2px 20px black;
+            border-radius: 5px;
+            margin: 20px;
+            text-align: left;
+            padding: 15px;
+            margin: .5em auto;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <ul>
                 <li>
-                    <a href="/">Home</a>
+                    <a href="/">HOME</a>
                 </li>
                 <li>
-                    <a href="/posts">All Posts</a>
+                    <a href="/posts">ALL POSTS</a>
                 </li>
                 <li>
-                    <a href="/posts/new">Create a New Post</a>
+                    <a href="/posts/new">CREATE A NEW POST</a>
                 </li>
                 <li>
-                    <a href="/topics">All Games</a>
+                    <a href="/topics">ALL GAMES</a>
                 </li>
             </ul>
         </nav>  
     </header>
     <main>
-        <h1>Game: <%= topic.name %></h1>
+        <h1><%= topic.name.toUpperCase() %></h1>
         <section>
-            <h2>Posts</h2>
-            <div>
+            <h2>POSTS</h2>
+            <div class="main">
                 <% for(post in posts) { %>
-                    <div><a href="/posts/<%= posts[post]._id %>"><%= posts[post].postName %></a></div>
+                    <div class="card">
+                        <a href="/posts/<%= posts[post]._id %>"><%= posts[post].postName %></a>
+                        <p><%= posts[post].body %></p>
+                    </div>
                 <% } %>
             </div>
         </section>
-        <section>
+        <!-- <section>
             <form action="/topics/<%= topic._id %>?_method=DELETE" method="POST">
                 <input type="submit" value="Delete Topic" />
             </form>
-        </section>
-        <section>
-            <a href="/topics/<%= topic._id %>/edit">Edit</a>
-        </section>
+        </section> -->
+        <!-- <section>
+            <a href="/topics/<%= topic._id %>/edit">EDIT</a>
+        </section> -->
     </main>
 </body>
 </html>
