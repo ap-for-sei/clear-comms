@@ -15,7 +15,7 @@ const topicsToSeed = [
     },
     {
         name: 'Call of Duty: Modern Warfare',
-        img: "https://media.playstation.com/is/image/SCEA/call-of-duty-modern-warfare-hero-banner-03-ps4-us-30may19?$native_nt$"
+        img: "https://images10.newegg.com/BizIntell/item/74/117/74-117-398/Call-of-Duty-Modern-Warfare-Xbox.jpg"
     }
 ]
 
