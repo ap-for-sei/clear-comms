@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Edit Topic</title>
+    <title>Edit Game</title>
 </head>
 <body>
     <header>
@@ -20,14 +20,14 @@
                     <a href="/posts/new">Create a New Post</a>
                 </li>
                 <li>
-                    <a href="/topics">All Topics</a>
+                    <a href="/topics">All Games</a>
                 </li>
             </ul>
         </nav>  
     </header>
     <main>
         <h1> Edit <%= topic.name %></h1>
-        <h2> Topic:</h2>
+        <h2> Game:</h2>
         <form action="/topics/<%= topic._id %>?_method=PUT" method="POST">
             <input type="text" name="name" value="<%= topic.name %>"/><br/>
             <input type="submit" value="Update Topic"/>
