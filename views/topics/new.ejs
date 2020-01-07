@@ -4,17 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>New Topic</title>
 </head>
 <body>
     <header>
-        <h1>create a new topic</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/posts">All Posts</a>
+                </li>
+                <li>
+                    <a href="/posts/new">Create a New Post</a>
+                </li>
+                <li>
+                    <a href="/topics">All Topics</a>
+                </li>
+            </ul>
+        </nav>  
     </header>
     <main>
+        <h1>Create a New Topic</h1>
         <form action="/topics" method="POST">
-            <label>topic</label>
-            <input type="text" name="name" placeholder="type here" />
-            <input type="submit" value="create topic" />
+            <label>Topic</label>
+            <input type="text" name="name" placeholder="Topic Name" />
+            <input type="submit" value="Create Topic" />
         </form>
     </main>
 </body>

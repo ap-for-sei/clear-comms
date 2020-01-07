@@ -96,7 +96,7 @@ router.get('/', async (req, res) => {
                 topic: newTopics[6]._id
             },
             {
-                postName: 'Kill steeling simulator, game control adapter, leveling Nazi Zombies high score bonus area stop lagging!',
+                postName: 'Kill stealing simulator, game control adapter, leveling Nazi Zombies high score bonus area stop lagging!',
                 body: 'Clutch wow, how did I die?! I definitely shot him first! 3D modded out. Power leveling double damage Xbox 360 betrayed me, hiding tactics that was awesome, benchmark. Nazi Zombies game online ban, screen shot. Level, haxzor owned, zone aimbot. Beasted it, prone blocked?! Our team.',
                 topic: newTopics[6]._id
             },

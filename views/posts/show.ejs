@@ -11,26 +11,29 @@
         <nav>
             <ul>
                 <li>
-                    <a href="/">home</a>
+                    <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/posts">posts index</a>
+                    <a href="/posts">All Posts</a>
+                </li>
+                <li>
+                    <a href="/topics">All Topics</a>
                 </li>
             </ul>
         </nav>
-        <h3>topic: <%= post.topic.name %></h3>
-        <h1>post name: <%= post.postName %></h1>
     </header>
     <main>
+        <h3>Topic: <%= post.topic.name %></h3>
+        <h1>Post Name: <%= post.postName %></h1>
         <section>
-            <p>post body: <%= post.body %></p>
+            <p>Post Body: <%= post.body %></p>
         </section>
         <section>
-            <a href="/posts/<%= post._id %>/edit">edit</a>
+            <a href="/posts/<%= post._id %>/edit">Edit Post</a>
         </section>
         <section>
             <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
-                <input type="submit" value="delete post"/>
+                <input type="submit" value="Delete Post"/>
             </form>
         </section>
     </main>

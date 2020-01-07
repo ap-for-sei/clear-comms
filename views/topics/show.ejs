@@ -8,22 +8,40 @@
 </head>
 <body>
     <header>
-        <h1>show page for this topic: <%= topic.name %></h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/posts">All Posts</a>
+                </li>
+                <li>
+                    <a href="/posts/new">Create a New Post</a>
+                </li>
+                <li>
+                    <a href="/topics">All Topics</a>
+                </li>
+            </ul>
+        </nav>  
     </header>
     <main>
+        <h1>Topic: <%= topic.name %></h1>
         <section>
-            <h2>topic contents</h2>
-            <ul>
-                <li>topic name: <%= topic.name %></li>
-            </ul>
+            <h2>Contents</h2>
+            <div>
+                <% for(post in posts) { %>
+                    <div><a href="/posts/<%= posts[post]._id %>"><%= posts[post].postName %></a></div>
+                <% } %>
+            </div>
         </section>
         <section>
             <form action="/topics/<%= topic._id %>?_method=DELETE" method="POST">
-                <input type="submit" value="delete topic" />
+                <input type="submit" value="Delete Topic" />
             </form>
         </section>
         <section>
-            <a href="/topics/<%= topic._id %>/edit">edit</a>
+            <a href="/topics/<%= topic._id %>/edit">Edit</a>
         </section>
     </main>
 </body>

@@ -4,34 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>All Posts</title>
 </head>
 <body>
     <header>
-        <h1>posts</h1>
         <nav>
             <ul>
                 <li>
-                    <a href="/">home</a>
+                    <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/posts/new">create a new post</a>
+                    <a href="/posts/new">Create a New Post</a>
                 </li>
                 <li>
-                    <a href="/topics">topics index</a>
+                    <a href="/topics">All Topics</a>
                 </li>
             </ul>
         </nav>  
     </header>
     <main>
-        <h2>list of posts</h2>
-        <ul>
+        <h1>All Posts</h1>
+        <div>
             <% for(let i = 0; i < posts.length; i++) { %>
-                <li>
+                <div>
                     <a href="/posts/<%= posts[i]._id %>"><%= posts[i].postName %></a>
-                </li>
+                </div>
             <% } %>
-        </ul>
+        </div>
     </main>
 </body>
 </html>

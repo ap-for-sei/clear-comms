@@ -4,23 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>New Post</title>
 </head>
 <body>
     <header>
-        <h1>create a post</h1>
         <nav>
             <ul>
                 <li>
-                    <a href="/">home</a>
+                    <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/posts">posts index</a>
+                    <a href="/posts">All Posts</a>
+                </li>
+                <li>
+                    <a href="/topics">All Topics</a>
                 </li>
             </ul>
         </nav>
     </header>
     <main>
+        <h1>Create a Post</h1>
         <form action="/posts" method="POST">
             <select name="topic">
                 <% for(let i = 0; i < topics.length; i++) { %>
@@ -29,7 +32,7 @@
             </select><br>
             <input type="text" name="postName" /><br/>
             <textarea name="body"></textarea><br/>
-            <input type="submit" value="submit post"/>
+            <input type="submit" value="Submit Post"/>
         </form>
     </main>
 </body>

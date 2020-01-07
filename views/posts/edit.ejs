@@ -4,23 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Edit Post</title>
 </head>
 <body>
-    <h1>edit <%= post.postName %>'s info</h1>
-    <nav>
-        <ul>
-            <li>
-                <a href="/">home</a>
-            </li>
-            <li>
-                <a href="/posts">post index</a>
-            </li>
-        </ul>
-    </nav>
-</header>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/posts">All Posts</a>
+                </li>
+                <li>
+                    <a href="/topics">All Topics</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 <main>
-    <h2>post attributes:</h2>
+    <h1>Edit <%= post.postName %></h1>
+    <h2>Post:</h2>
     <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
         <select name="topic">
             <% for(let i = 0; i < topics.length; i++) { %>
@@ -33,7 +37,7 @@
         </select>
         <input type="text" name="postName" value="<%= post.postName %>"/><br/>
         <textarea name="body"><%= post.body %></textarea><br/>
-        <input type="submit" value="update post"/>
+        <input type="submit" value="Update Post"/>
     </form>
 </main>
 </body>
