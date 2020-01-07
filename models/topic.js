@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 const topicSchema = mongoose.Schema({
-    name: String
+    name: String,
+    img: String
 });
 
 const Topic = mongoose.model('Topic', topicSchema);

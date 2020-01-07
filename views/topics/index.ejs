@@ -5,6 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ALl Topics</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        li {
+          float: left;
+        }
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        /* Change the link color to #111 (black) on hover */
+        li a:hover {
+          background-color: #111;
+        }
+        .main {
+            margin: 2%;
+        }
+        .card {
+            width: 20%;
+            display: inline-block;
+            box-shadow: 2px 2px 20px black;
+            border-radius: 5px;
+            margin: 2%;
+        }
+        .image img {
+            width: 100%;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .name {
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -24,10 +73,15 @@
     </header>
     <main>
         <h1>Topics</h1>
-        <div>
+        <div class="main">
             <% for (i = 0; i < topics.length; i++) { %>
-                <div>
+                <div class="card">
+                    <div class="image">
+                        <img src="<%= topics[i].img %>">
+                    </div>
+                    <div class="name">
                     <a href="/topics/<%= topics[i]._id %>"><%= topics[i].name %></a>
+                    </div>
                 </div>
             <% } %>
         </div>
