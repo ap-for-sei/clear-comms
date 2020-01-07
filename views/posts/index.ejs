@@ -5,6 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>All Posts</title>
+    <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+            font-family: 'Kanit', sans-serif;
+            text-align: center;
+            background-color: grey;
+        }
+        h1 {
+            color: white;
+            padding: 10px 10px;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        li {
+          float: left;
+        }
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        /* Change the link color to #111 (black) on hover */
+        li a:hover {
+          background-color: #111;
+        }
+        .main {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        .card {
+            width: 60%;
+            height: 30%;
+            box-shadow: 2px 2px 20px black;
+            border-radius: 5px;
+            margin: 20px;
+            text-align: left;
+            padding: 15px;
+            margin: 1em auto;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -24,10 +82,11 @@
     </header>
     <main>
         <h1>All Posts</h1>
-        <div>
+        <div class="main">
             <% for(let i = 0; i < posts.length; i++) { %>
-                <div>
+                <div class="card">
                     <a href="/posts/<%= posts[i]._id %>"><%= posts[i].postName %></a>
+                    <p><%= posts[i].body %></p>
                 </div>
             <% } %>
         </div>

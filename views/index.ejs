@@ -5,42 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Clear Comms</title>
+    <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+            font-family: 'Kanit', sans-serif;
+            text-align: center;
+            background-color: grey;
+        }
+        h1 {
+            color: white;
+            padding: 10px 10px;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        li {
+          float: left;
+        }
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        button {
+            width: 20%;
+            background-color: black;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        input {
+            width: 20%;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <%= message %>
-        <% if (!logged) { %>
-            <h4>Login</h4>
-            <form action="/auth/login" method="POST">
-                <input type="text" name="username" placeholder="username"><br>
-                <input type="password" name="password" placeholder="password"><br>
-                <button type="submit">Login</button>
-            </form>
-        
-            <h4>Registration</h4>
-            <form action="/auth/registration" method="POST">
-                <input type="text" name="username" placeholder="username"><br>
-                <input type="email" name="email" placeholder="email"><br>
-                <input type="password" name="password" placeholder="password"><br>
-                <button type="submit">Register</button>
-            </form>
-        <% } %>
-        <h1>Welcome to Clear Comms</h1>
         <nav>
             <% if (logged) { %>
                 <li>
-                    <a href="/auth/logout">Logout</a>
+                    <a href="/auth/logout">LOGOUT</a>
                 </li>
             <% } %>
             <ul>
                 <li>
-                    <a href="/topics">Browse Games</a>
+                    <a href="/topics">BROWSE GAMES</a>
                 </li>
                 <li>
-                    <a href="/posts">Browse Posts</a>
+                    <a href="/posts">BROWSE POSTS</a>
                 </li>
             </ul>
         </nav>
     </header>
+    <h1>WELCOME TO CLEAR COMMS</h1>
+    <main>
+        <%= message %>
+        <% if (!logged) { %>
+            <h4>LOGIN</h4>
+            <form action="/auth/login" method="POST">
+                <input type="text" name="username" placeholder="USERNAME"><br>
+                <input type="password" name="password" placeholder="PASSWORD"><br>
+                <button type="submit">LOGIN</button>
+            </form>
+        
+            <h4>REGISTRATION</h4>
+            <form action="/auth/registration" method="POST">
+                <input type="text" name="username" placeholder="USERNAME"><br>
+                <input type="email" name="email" placeholder="EMAIL"><br>
+                <input type="password" name="password" placeholder="PASSWORD"><br>
+                <button type="submit">REGISTER</button>
+            </form>
+        <% } %>
+    </main>
 </body>
 </html>
